@@ -1,0 +1,17 @@
+.tasks-item {
+    background-color: #f4f6f7;
+    padding: 10px;
+}
+
+.del-btn {
+    margin-left: auto;
+}
+
+.done-task {
+    text-decoration: line-through;
+}
+
+.tasks-item-done{
+    background-color: #c4f3c8;
+    padding: 10px;
+}

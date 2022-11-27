@@ -1,0 +1,148 @@
+{% load static %}
+
+{% if not request.user.is_authenticated %}
+<script>window.location.replace("{% url 'list-view-local' %}");</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+    rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'frontend/main.css' %}"/>
+
+
+
+</head>
+<body>
+    
+<div class="containter">
+
+    <div class="row">
+      <div class="col-md-2" style="background-color: #f7f2f2;">
+
+        <div class="me-4 mx-auto p-4 d-flex align-items-center">
+            
+          <div class="p-2">
+            <a href = "{% url 'login' %}" class="waves-effect waves-light btn cyan darken-4">Logout</a>
+          </div>
+      </div>
+
+        <div>
+
+
+
+        </div>
+
+      </div>
+      
+      
+      <div class="col-md-7">
+        
+    
+        <div class="me-4 mx-auto p-4">
+
+            <section class="vh-100 gradient-custom">
+                <div class="container py-5 h-100">
+                  <div class="row d-flex h-100">
+                    <div class="col col-xl-10">
+
+                      <h2 class="p-5">{{ request.user }}'s Tasks</h2>
+              
+                      <div class="card">
+                        <div class="card-body p-5">
+              
+                          <form class="d-flex justify-content-center align-items-center mb-4" id="form1">
+                            <div class="form-outline flex-fill">
+                              <input type="text" id="input1" class="form-control" />
+                              <label class="form-label" for="input1">New task...</label>
+                            </div>
+                            <button type="submit" class="btn btn-info ms-2">Add</button>
+                          </form>
+              
+                          
+              
+                          <!-- Tabs content -->
+                          <div class="tab-content" id="ex1-content">
+                            <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                              aria-labelledby="ex1-tab-1">
+                              <ul class="list-group mb-0" id="tasks-ul">
+                                <!-- <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                                  style="background-color: #f4f6f7;">
+                                  <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." checked />
+                                  <s>Cras justo odio</s>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                                  style="background-color: #f4f6f7;">
+                                  <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." checked />
+                                  <s>Dapibus ac facilisis in</s>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                                  style="background-color: #f4f6f7;">
+                                  <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                                  Morbi leo risus
+                                </li>
+                                <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                                  style="background-color: #f4f6f7;">
+                                  <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                                  Porta ac consectetur ac
+                                </li>
+                                <li class="list-group-item d-flex align-items-center border-0 mb-0 rounded"
+                                  style="background-color: #f4f6f7;">
+                                  <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                                  Vestibulum at eros
+                                </li> -->
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- Tabs content -->
+              
+                        </div>
+                      </div>
+              
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+
+
+        </div>
+        
+    
+      </div>
+
+      <div class="col-md-3">
+      
+      </div>
+    </div>
+
+</div>
+
+
+
+</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+<script src="{% static 'frontend/main.js' %}"></script>
+</html>
